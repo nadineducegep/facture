@@ -1,8 +1,14 @@
 
-public class Facture 
-{	
-	public enum FACTURE{SOUS_TOTAL, TPS, TVQ, TOTAL};
-
+public class Magasin 
+{
+	interface ConstanteFacture
+	{
+		public static final int SOUS_TOTAL = 0;
+		public static final int TPS = 1;
+		public static final int TVQ = 2;
+		public static final int TOTAL = 3;		
+	}
+	
 	public static void main(String[] args) 
 	{
 		float[] listeAchatsMardi = lireAchats();
@@ -29,11 +35,11 @@ public class Facture
 			System.out.println(achat);
 		}
 		System.out.println("--------------------");		
-		System.out.println("Sous-total:" + facture[FACTURE.SOUS_TOTAL.ordinal()] + "$");
-		System.out.println("TPS:" + facture[FACTURE.TPS.ordinal()] + "$");
-		System.out.println("TVQ:" + facture[FACTURE.TVQ.ordinal()] + "$");
+		System.out.println("Sous-total:" + facture[ConstanteFacture.SOUS_TOTAL] + "$");
+		System.out.println("TPS:" + facture[ConstanteFacture.TPS] + "$");
+		System.out.println("TVQ:" + facture[ConstanteFacture.TVQ] + "$");
 		System.out.println("--------------------");		
-		System.out.println("Total:" + facture[FACTURE.TOTAL.ordinal()] + "$");	
+		System.out.println("Total:" + facture[ConstanteFacture.TOTAL] + "$");	
 	}
 	
 	public static float[] preparerFacture(float[] listePrix)
@@ -44,10 +50,10 @@ public class Facture
 		float total = sousTotal + tps + tvq;
 		
 		float[] facture = new float[4];
-		facture[FACTURE.SOUS_TOTAL.ordinal()] = sousTotal;
-		facture[FACTURE.TPS.ordinal()] = tps;
-		facture[FACTURE.TVQ.ordinal()] = tvq;
-		facture[FACTURE.TOTAL.ordinal()] = total;
+		facture[ConstanteFacture.SOUS_TOTAL] = sousTotal;
+		facture[ConstanteFacture.TPS] = tps;
+		facture[ConstanteFacture.TVQ] = tvq;
+		facture[ConstanteFacture.TOTAL] = total;
 		return facture;
 	}
 	
