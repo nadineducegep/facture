@@ -1,13 +1,10 @@
 
 public class Magasin 
 {
-	interface ConstanteFacture
-	{
-		public static final int SOUS_TOTAL = 0;
-		public static final int TPS = 1;
-		public static final int TVQ = 2;
-		public static final int TOTAL = 3;		
-	}
+	public static final int SOUS_TOTAL = 0;
+	public static final int TPS = 1;
+	public static final int TVQ = 2;
+	public static final int TOTAL = 3;		
 	
 	public static void main(String[] args) 
 	{
@@ -35,11 +32,11 @@ public class Magasin
 			System.out.println(achat);
 		}
 		System.out.println("--------------------");		
-		System.out.println("Sous-total:" + facture[ConstanteFacture.SOUS_TOTAL] + "$");
-		System.out.println("TPS:" + facture[ConstanteFacture.TPS] + "$");
-		System.out.println("TVQ:" + facture[ConstanteFacture.TVQ] + "$");
+		System.out.println("Sous-total:" + facture[SOUS_TOTAL] + "$");
+		System.out.println("TPS:" + facture[TPS] + "$");
+		System.out.println("TVQ:" + facture[TVQ] + "$");
 		System.out.println("--------------------");		
-		System.out.println("Total:" + facture[ConstanteFacture.TOTAL] + "$");	
+		System.out.println("Total:" + facture[TOTAL] + "$");	
 	}
 	
 	public static float[] preparerFacture(float[] listePrix)
@@ -50,10 +47,10 @@ public class Magasin
 		float total = sousTotal + tps + tvq;
 		
 		float[] facture = new float[4];
-		facture[ConstanteFacture.SOUS_TOTAL] = sousTotal;
-		facture[ConstanteFacture.TPS] = tps;
-		facture[ConstanteFacture.TVQ] = tvq;
-		facture[ConstanteFacture.TOTAL] = total;
+		facture[SOUS_TOTAL] = sousTotal;
+		facture[TPS] = tps;
+		facture[TVQ] = tvq;
+		facture[TOTAL] = total;
 		return facture;
 	}
 	
