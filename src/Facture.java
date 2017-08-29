@@ -3,15 +3,20 @@ public class Facture {
 
 	public static void main(String[] args) 
 	{
+		float[] listeAchatsMardi = lireAchats();
+		float[] factureMardi = preparerFacture(listeAchatsMardi);		
+		afficherFacture(listeAchatsMardi, factureMardi);
+	}
+	
+	public static float[] lireAchats()
+	{
 		float [] listeAchats = new float[5];
 		listeAchats[0] = 2.7f;
 		listeAchats[1] = 6f;
 		listeAchats[2] = 8.2f;
 		listeAchats[3] = 4.25f;
-		listeAchats[4] = 1.0f;
-		
-		float[] factureMardi = preparerFacture(listeAchats);		
-		afficherFacture(listeAchats, factureMardi);
+		listeAchats[4] = 1.0f;		
+		return listeAchats;
 	}
 	
 	public static void afficherFacture(float[] listeAchats, float[] facture)
@@ -26,8 +31,7 @@ public class Facture {
 		System.out.println("TPS:" + facture[1] + "$");
 		System.out.println("TVQ:" + facture[2] + "$");
 		System.out.println("--------------------");		
-		System.out.println("Total:" + facture[3] + "$");
-		
+		System.out.println("Total:" + facture[3] + "$");	
 	}
 	
 	public static float[] preparerFacture(float[] listePrix)
