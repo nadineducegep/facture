@@ -11,10 +11,24 @@ public class Facture {
 		listeAchats[4] = 1.0f;
 		
 		float[] factureMardi = preparerFacture(listeAchats);		
-		//afficherFacture(listeAchats, factureMardi);
+		afficherFacture(listeAchats, factureMardi);
 	}
 	
-
+	public static void afficherFacture(float[] listeAchats, float[] facture)
+	{
+		for(int numeroAchat = 0; numeroAchat < listeAchats.length; numeroAchat++)
+		{
+			float achat = listeAchats[numeroAchat];
+			System.out.println(achat);
+		}
+		System.out.println("--------------------");		
+		System.out.println("Sous-total:" + facture[0] + "$");
+		System.out.println("TPS:" + facture[1] + "$");
+		System.out.println("TVQ:" + facture[2] + "$");
+		System.out.println("--------------------");		
+		System.out.println("Total:" + facture[3] + "$");
+		
+	}
 	
 	public static float[] preparerFacture(float[] listePrix)
 	{
