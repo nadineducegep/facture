@@ -1,5 +1,10 @@
 
 public class Facture {
+	
+	public static final int FACTURE_SOUS_TOTAL = 0;
+	public static final int FACTURE_TPS = 1;
+	public static final int FACTURE_TVQ = 2;
+	public static final int FACTURE_TOTAL = 3;
 
 	public static void main(String[] args) 
 	{
@@ -27,11 +32,11 @@ public class Facture {
 			System.out.println(achat);
 		}
 		System.out.println("--------------------");		
-		System.out.println("Sous-total:" + facture[0] + "$");
-		System.out.println("TPS:" + facture[1] + "$");
-		System.out.println("TVQ:" + facture[2] + "$");
+		System.out.println("Sous-total:" + facture[FACTURE_SOUS_TOTAL] + "$");
+		System.out.println("TPS:" + facture[FACTURE_TPS] + "$");
+		System.out.println("TVQ:" + facture[FACTURE_TVQ] + "$");
 		System.out.println("--------------------");		
-		System.out.println("Total:" + facture[3] + "$");	
+		System.out.println("Total:" + facture[FACTURE_TOTAL] + "$");	
 	}
 	
 	public static float[] preparerFacture(float[] listePrix)
@@ -42,10 +47,10 @@ public class Facture {
 		float total = sousTotal + tps + tvq;
 		
 		float[] facture = new float[4];
-		facture[0] = sousTotal;
-		facture[1] = tps;
-		facture[2] = tvq;
-		facture[3] = total;
+		facture[FACTURE_SOUS_TOTAL] = sousTotal;
+		facture[FACTURE_TPS] = tps;
+		facture[FACTURE_TVQ] = tvq;
+		facture[FACTURE_TOTAL] = total;
 		return facture;
 	}
 	
