@@ -10,22 +10,25 @@ public class Facture {
 		listeAchats[3] = 4.25f;
 		listeAchats[4] = 1.0f;
 		
-		// soustotal =  somme(listeAchat)
-		// taxeFederale = sousTotal * 5%
-		// taxeProvinciale = (sousTotal + taxeFederale) * 9.5% = sousTotal * 9.975%
-		// total = soustotal + taxeFederale + taxeProvinciale;
-		
-		//System.out.println(calculerSommePrix(listeAchats));
-		//System.out.println("La taxe tps de 2 est " + calculerTaxeFederale(2));
-		//System.out.println("La taxe tvq de 1 est " + calculerTaxeProvinciale(2));
-		float sousTotal = calculerSousTotal(listeAchats);
+		float[] factureMardi = preparerFacture(listeAchats);		
+		//afficherFacture(listeAchats, factureMardi);
+	}
+	
+
+	
+	public static float[] preparerFacture(float[] listePrix)
+	{
+		float sousTotal = calculerSousTotal(listePrix);
 		float tps = calculerTaxeFederale(sousTotal);
 		float tvq = calculerTaxeProvinciale(sousTotal);
 		float total = sousTotal + tps + tvq;
-		System.out.println("Le sous total est " + sousTotal + "$");
-		System.out.println("Le grand total est " + total + "$");
 		
-		//facture = preparerFacture(listeAchats);
+		float[] facture = new float[4];
+		facture[0] = sousTotal;
+		facture[1] = tps;
+		facture[2] = tvq;
+		facture[3] = total;
+		return facture;
 	}
 	
 	public static float calculerSousTotal(float[] listePrix)
