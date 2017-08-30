@@ -11,7 +11,7 @@ public class Magasin
 		Facture factureDuMardi = new Facture(); // idem
 		factureDuMardi.listeAchats = lireAchats();
 		factureDuMardi = preparerFacture(factureDuMardi);		
-		afficherFacture(factureDuMardi);
+		factureDuMardi.afficherFacture();
 	}
 	
 	public static float[] lireAchats()
@@ -24,22 +24,7 @@ public class Magasin
 		listeAchats[4] = 1.0f;		
 		return listeAchats;
 	}
-	
-	public static void afficherFacture(Facture facture)
-	{
-		for(int numeroAchat = 0; numeroAchat < facture.listeAchats.length; numeroAchat++)
-		{
-			float achat = facture.listeAchats[numeroAchat];
-			System.out.println(achat);
-		}
-		System.out.println("--------------------");		
-		System.out.println("Sous-total:" + facture.sousTotal + "$");
-		System.out.println("TPS:" + facture.tps + "$");
-		System.out.println("TVQ:" + facture.tvq + "$");
-		System.out.println("--------------------");		
-		System.out.println("Total:" + facture.total + "$");	
-	}
-	
+		
 	public static Facture preparerFacture(Facture facture)
 	{
 		facture.sousTotal = calculerSousTotal(facture.listeAchats);
