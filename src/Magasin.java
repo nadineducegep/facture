@@ -1,14 +1,3 @@
-// Création d'une petite structure = une classe sans fonction - dans le contexte de la classe utilisatrice
-class Facture
-{
-	float [] listeAchats = new float[5];
-	float sousTotal;
-	float tps;
-	float tvq;
-	float total;
-}
-// Ce n'était que sa recette, aucun espace mémoire n'est utilisé avec juste ceci	
-
 public class Magasin 
 {
 	public static void main(String[] args) 
