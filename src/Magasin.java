@@ -10,7 +10,7 @@ public class Magasin
 		
 		Facture factureDuMardi = new Facture(); // idem
 		factureDuMardi.listeAchats = lireAchats();
-		factureDuMardi = factureDuMardi.preparerFacture(factureDuMardi);		
+		factureDuMardi = factureDuMardi.preparerFacture();		
 		factureDuMardi.afficherFacture();
 	}
 	

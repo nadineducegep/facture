@@ -21,13 +21,13 @@ public class Facture
 		System.out.println("Total:" + this.total + "$");	
 	}
 	
-	public static Facture preparerFacture(Facture facture)
+	public Facture preparerFacture()
 	{
 		//facture.sousTotal = calculerSousTotal(facture.listeAchats);
-		facture.tps = calculerTaxeFederale(facture.sousTotal);
-		facture.tvq = calculerTaxeProvinciale(facture.sousTotal);
-		facture.total = facture.sousTotal + facture.tps + facture.tvq;		
-		return facture;
+		this.tps = calculerTaxeFederale(this.sousTotal);
+		this.tvq = calculerTaxeProvinciale(this.sousTotal);
+		this.total = this.sousTotal + this.tps + this.tvq;		
+		return this;
 	}
 
 	
