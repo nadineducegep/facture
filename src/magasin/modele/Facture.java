@@ -1,12 +1,13 @@
+package magasin.modele;
 import java.text.NumberFormat;
 
 public class Facture 
 {
-	float [] listeAchats;
-	float sousTotal;
-	float tps;
-	float tvq;
-	float total;
+	protected float [] listeAchats;
+	protected float sousTotal;
+	protected float tps;
+	protected float tvq;
+	protected float total;
 
 	// Fonction qui a le meme nom que la classe et qui n'a pas de type de retour
 	public Facture() // Constructeur - appelé avec le new
