@@ -10,7 +10,7 @@ public class Magasin
 		
 		Facture factureDuMardi = new Facture(); // idem
 		factureDuMardi.listeAchats = lireAchats();
-		factureDuMardi = preparerFacture(factureDuMardi);		
+		factureDuMardi = factureDuMardi.preparerFacture(factureDuMardi);		
 		factureDuMardi.afficherFacture();
 	}
 	
@@ -25,14 +25,8 @@ public class Magasin
 		return listeAchats;
 	}
 		
-	public static Facture preparerFacture(Facture facture)
-	{
-		facture.sousTotal = calculerSousTotal(facture.listeAchats);
-		facture.tps = calculerTaxeFederale(facture.sousTotal);
-		facture.tvq = calculerTaxeProvinciale(facture.sousTotal);
-		facture.total = facture.sousTotal + facture.tps + facture.tvq;		
-		return facture;
-	}
+	
+	
 	
 	public static float calculerSousTotal(float[] listePrix)
 	{
@@ -45,14 +39,4 @@ public class Magasin
 		
 		return somme;
 	}
-	
-	public static float calculerTaxeFederale(float montant)
-	{
-		return montant * 0.05f;
-	}
-
-	public static float calculerTaxeProvinciale(float montant)
-	{
-		return montant * 0.09975f;
-	}	
 }
