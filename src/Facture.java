@@ -20,6 +20,7 @@ public class Facture
 			float achat = this.listeAchats[numeroAchat];
 			System.out.println(imprimeurNombres.format(achat) + " $");
 		}
+		
 		System.out.println("--------------------");		
 		System.out.println("Sous-total:" + imprimeurNombres.format(this.sousTotal) + " $");
 		System.out.println("TPS:       " + imprimeurNombres.format(this.tps) + " $");
