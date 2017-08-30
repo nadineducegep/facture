@@ -6,7 +6,7 @@ public class Facture
 	float tvq;
 	float total;
 
-	public void afficherFacture()
+	public void afficher()
 	{
 		for(int numeroAchat = 0; numeroAchat < this.listeAchats.length; numeroAchat++)
 		{
@@ -21,7 +21,7 @@ public class Facture
 		System.out.println("Total:" + this.total + "$");	
 	}
 	
-	public Facture preparerFacture()
+	public Facture preparer()
 	{
 		this.sousTotal = calculerSousTotal(this.listeAchats);
 		this.tps = calculerTaxeFederale(this.sousTotal);
