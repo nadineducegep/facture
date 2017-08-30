@@ -12,10 +12,19 @@ public class Facture
 	public Facture() // Constructeur - appelé avec le new
 	{
 		this.sousTotal = 0;
-		//this.tps = 0;
-		//this.tvq = 0;
-		//this.total = 0;
+		this.tps = 0;
+		this.tvq = 0;
+		this.total = 0;
 		this.listeAchats = this.lireAchats();
+	}
+	
+	public Facture(float [] listePrix)
+	{		
+		this.sousTotal = 0;
+		this.tps = 0;
+		this.tvq = 0;
+		this.total = 0;
+		this.listeAchats = listePrix;
 	}
 	
 	public void afficher()
