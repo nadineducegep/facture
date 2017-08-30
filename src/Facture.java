@@ -1,3 +1,5 @@
+import java.text.NumberFormat;
+
 public class Facture 
 {
 	float [] listeAchats = new float[5];
@@ -8,17 +10,22 @@ public class Facture
 
 	public void afficher()
 	{
+		// https://docs.oracle.com/javase/7/docs/api/java/text/NumberFormat.html
+		NumberFormat imprimeurNombres = NumberFormat.getInstance();
+		imprimeurNombres.setMaximumFractionDigits(2);
+		imprimeurNombres.setMinimumFractionDigits(2);
+		
 		for(int numeroAchat = 0; numeroAchat < this.listeAchats.length; numeroAchat++)
 		{
 			float achat = this.listeAchats[numeroAchat];
-			System.out.println(achat);
+			System.out.println(imprimeurNombres.format(achat) + " $");
 		}
 		System.out.println("--------------------");		
-		System.out.println("Sous-total:" + this.sousTotal + "$");
-		System.out.println("TPS:" + this.tps + "$");
-		System.out.println("TVQ:" + this.tvq + "$");
+		System.out.println("Sous-total:" + imprimeurNombres.format(this.sousTotal) + " $");
+		System.out.println("TPS:       " + imprimeurNombres.format(this.tps) + " $");
+		System.out.println("TVQ:       " + imprimeurNombres.format(this.tvq) + " $");
 		System.out.println("--------------------");		
-		System.out.println("Total:" + this.total + "$");	
+		System.out.println("Total:    " + imprimeurNombres.format(this.total) + " $");	
 	}
 	
 	public Facture preparer()
