@@ -6,8 +6,7 @@ public class Magasin
 		float tpsLundi = factureDuLundi.tps; // Objet En lecture
 		factureDuLundi.tps = 5f; // Objet En ecriture
 		
-		Facture factureDuMardi = new Facture(); // idem
-		factureDuMardi.lireAchats();
+		Facture factureDuMardi = new Facture(); 
 		factureDuMardi.preparer();		
 		factureDuMardi.afficher();
 	}

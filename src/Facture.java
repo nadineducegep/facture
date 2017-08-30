@@ -2,12 +2,22 @@ import java.text.NumberFormat;
 
 public class Facture 
 {
-	float [] listeAchats = new float[5];
+	float [] listeAchats;
 	float sousTotal;
 	float tps;
 	float tvq;
 	float total;
 
+	// Fonction qui a le meme nom que la classe et qui n'a pas de type de retour
+	public Facture() // Constructeur - appelé avec le new
+	{
+		this.sousTotal = 0;
+		//this.tps = 0;
+		//this.tvq = 0;
+		//this.total = 0;
+		this.listeAchats = this.lireAchats();
+	}
+	
 	public void afficher()
 	{
 		// https://docs.oracle.com/javase/7/docs/api/java/text/NumberFormat.html
@@ -61,7 +71,7 @@ public class Facture
 		return somme;
 	}
 
-	public void lireAchats()
+	public float [] lireAchats()
 	{
 		float [] listeAchats = new float[5];
 		listeAchats[0] = 2.7f;
@@ -69,7 +79,7 @@ public class Facture
 		listeAchats[2] = 8.2f;
 		listeAchats[3] = 4.25f;
 		listeAchats[4] = 1.0f;		
-		this.listeAchats = listeAchats;
+		return listeAchats;
 	}
 	
 }
