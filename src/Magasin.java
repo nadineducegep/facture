@@ -24,19 +24,6 @@ public class Magasin
 		listeAchats[4] = 1.0f;		
 		return listeAchats;
 	}
-		
 	
 	
-	
-	public static float calculerSousTotal(float[] listePrix)
-	{
-		float somme = 0;
-		
-		for(int position = 0; position < listePrix.length; position++)
-		{
-			somme += listePrix[position];
-		}
-		
-		return somme;
-	}
 }

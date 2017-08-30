@@ -23,7 +23,7 @@ public class Facture
 	
 	public Facture preparerFacture()
 	{
-		//facture.sousTotal = calculerSousTotal(facture.listeAchats);
+		this.sousTotal = calculerSousTotal(this.listeAchats);
 		this.tps = calculerTaxeFederale(this.sousTotal);
 		this.tvq = calculerTaxeProvinciale(this.sousTotal);
 		this.total = this.sousTotal + this.tps + this.tvq;		
@@ -41,4 +41,17 @@ public class Facture
 		return montant * 0.09975f;
 	}
 
+	public static float calculerSousTotal(float[] listePrix)
+	{
+		float somme = 0;
+		
+		for(int position = 0; position < listePrix.length; position++)
+		{
+			somme += listePrix[position];
+		}
+		
+		return somme;
+	}
+
+	
 }
