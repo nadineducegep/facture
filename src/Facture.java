@@ -53,8 +53,7 @@ public class Facture
 		return somme;
 	}
 
-	
-	public static float[] lireAchats()
+	public void lireAchats()
 	{
 		float [] listeAchats = new float[5];
 		listeAchats[0] = 2.7f;
@@ -62,7 +61,7 @@ public class Facture
 		listeAchats[2] = 8.2f;
 		listeAchats[3] = 4.25f;
 		listeAchats[4] = 1.0f;		
-		return listeAchats;
+		this.listeAchats = listeAchats;
 	}
 	
 }

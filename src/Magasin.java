@@ -9,7 +9,7 @@ public class Magasin
 		factureDuLundi.tps = 5f; // Objet En ecriture
 		
 		Facture factureDuMardi = new Facture(); // idem
-		factureDuMardi.listeAchats = factureDuMardi.lireAchats();
+		factureDuMardi.lireAchats();
 		factureDuMardi = factureDuMardi.preparerFacture();		
 		factureDuMardi.afficherFacture();
 	}
