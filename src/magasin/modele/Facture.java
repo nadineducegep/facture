@@ -40,7 +40,7 @@ public class Facture
 		for(int numeroAchat = 0; numeroAchat < this.listeAchats.length; numeroAchat++)
 		{
 			float achat = this.listeAchats[numeroAchat];
-			System.out.println(imprimeurNombres.format(achat) + " $");
+			Journal.memoriser(imprimeurNombres.format(achat) + " $");
 		}
 		
 		Journal.memoriser("--------------------");		
