@@ -11,7 +11,7 @@ public class Magasin
 		
 		Facture factureDuMardi = new Facture(); 
 		factureDuMardi.preparer();		
-		factureDuMardi.afficher();
+		factureDuMardi.journaliser();
 	}
 
 	

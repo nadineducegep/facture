@@ -1,6 +1,8 @@
 package magasin.modele;
 import java.text.NumberFormat;
 
+import magasin.outil.Journal;
+
 public class Facture 
 {
 	protected float [] listeAchats;
@@ -28,7 +30,7 @@ public class Facture
 		this.listeAchats = listePrix;
 	}
 	
-	public void afficher()
+	public void journaliser()
 	{
 		// https://docs.oracle.com/javase/7/docs/api/java/text/NumberFormat.html
 		NumberFormat imprimeurNombres = NumberFormat.getInstance();
@@ -41,12 +43,12 @@ public class Facture
 			System.out.println(imprimeurNombres.format(achat) + " $");
 		}
 		
-		System.out.println("--------------------");		
-		System.out.println("Sous-total:" + imprimeurNombres.format(this.sousTotal) + " $");
-		System.out.println("TPS:       " + imprimeurNombres.format(this.tps) + " $");
-		System.out.println("TVQ:       " + imprimeurNombres.format(this.tvq) + " $");
-		System.out.println("--------------------");		
-		System.out.println("Total:    " + imprimeurNombres.format(this.total) + " $");	
+		Journal.memoriser("--------------------");		
+		Journal.memoriser("Sous-total:" + imprimeurNombres.format(this.sousTotal) + " $");
+		Journal.memoriser("TPS:       " + imprimeurNombres.format(this.tps) + " $");
+		Journal.memoriser("TVQ:       " + imprimeurNombres.format(this.tvq) + " $");
+		Journal.memoriser("--------------------");		
+		Journal.memoriser("Total:    " + imprimeurNombres.format(this.total) + " $");	
 	}
 	
 	public Facture preparer()
